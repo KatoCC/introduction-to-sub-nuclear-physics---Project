@@ -1,19 +1,19 @@
 # Carlo-Crescente
-Cross Section JPSI
-//
-//  Completiamo quindi con i grafici dell'accettanza e dell'efficienza e con la stima della sezione d'urto differenziale
-//
+    Cross Section JPSI
+    //
+    //  Completiamo quindi con i grafici dell'accettanza e dell'efficienza e con la stima della sezione d'urto differenziale
+    //
 
-void cross_section(){
+    void cross_section(){
     // definiamo i limiti per gli impulsi trasversi delle particelle per  i plot che tracceremo
     double PtMin = 0.;
     double PtMax = 16.;
     // definiamo il numero di bin che vogliamo tracciare nei vari grafici delle popolazioni
     int Nbin = 50;
     
-double tagli_pt[51] = {0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.15, 1.3, 1.5, 1.7, 1.95, 2.1, 2.25, 2.5, 2.7, 2.95, 3.1, 3.3, 3.5615, 3.8, 4.0, 4.2, 4.3, 4.54803, 4.63, 4.7, 4.9,   5.15231, 5.358, 5.64166, 5.8, 6.1, 6.35287, 6.78, 7.23158, 7.731, 8.185, 8.30151, 8.54015, 8.76872, 9.22976, 9.72248, 10.325, 11.0662, 11.9326, 12.438, 13.1252, 13.842, 14.3367, 15.2, 16.0};
+    double tagli_pt[51] = {0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.15, 1.3, 1.5, 1.7, 1.95, 2.1, 2.25, 2.5, 2.7, 2.95, 3.1, 3.3, 3.5615, 3.8, 4.0, 4.2, 4.3, 4.54803, 4.63, 4.7, 4.9,   5.15231, 5.358, 5.64166, 5.8, 6.1, 6.35287, 6.78, 7.23158, 7.731, 8.185, 8.30151, 8.54015, 8.76872, 9.22976, 9.72248, 10.325, 11.0662, 11.9326, 12.438, 13.1252, 13.842, 14.3367, 15.2, 16.0};
     
-// occupiamoci adesso del calcolo di accettanza ed efficienza, definendo anzitutto gli istogrammi in cui inseriremo i dati di interesse
+    // occupiamoci adesso del calcolo di accettanza ed efficienza, definendo anzitutto gli istogrammi in cui inseriremo i dati di interesse
     TH1D *hg = new TH1D("hg", "Gen JPsi Eta vs Pt", Nbin, PtMin, PtMax);
     TH1D *hrec = new TH1D("hrec", "Rec JPsi Eta vs Pt", Nbin, PtMin, PtMax);
     TH1D *ha = new TH1D("ha", "All good JPsi Eta vs Pt", Nbin, PtMin, PtMax);
@@ -21,7 +21,7 @@ double tagli_pt[51] = {0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.15, 1.3, 1.5, 1.7, 1.95, 
     TH1D *hacc = new TH1D("h_acc", "Accettanza", Nbin, PtMin, PtMax);
     TH1D *heff = new TH1D("h_eff", "Efficienza", Nbin, PtMin, PtMax);
     
-// apriamo il file ed accediamo ai dati MC, per l'accettanza e l'efficienza
+    // apriamo il file ed accediamo ai dati MC, per l'accettanza e l'efficienza
     TFile *file = new TFile("Jpsi_MC.root");
     TTree *tree = (TTree*) file->Get("data");
     TLorentzVector *gmu1= new TLorentzVector;
