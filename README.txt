@@ -1,4 +1,6 @@
 Introducion of subnuclear physics - Project 
 
-Dovevamo riprodurre l'analisi dati della sezione d'urto del decadimento del JPsi
+We had two tasks: 
+I)reproducing the data analysis; 
+II)comparing it with the original report.
 
